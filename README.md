@@ -1,4 +1,3 @@
-# python_sql_examples
 # Function to return negative number count
 
 This is a simple funtion that takes a 2D array and counts the number of values that are less than zero.
@@ -18,3 +17,14 @@ def negativeNumbers(array):
 
 negativeNumbers(numbers)
 ```
+# SQL Inner Join
+
+This SQL query will pull data from two differnt tables and display it.
+
+```
+SELECT CustomerID, Reservation, Date, FirstName, LastName
+FROM reservation, customer
+WHERE LastName LIKE 'Stephenson'
+OR LastName LIKE 'Stevenson'
+OR LastName LIKE 'Stevensen';
+GO
