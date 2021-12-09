@@ -22,9 +22,10 @@ negativeNumbers(numbers)
 This SQL query will pull data from two differnt tables and display it.
 
 ```
-SELECT CustomerID, Reservation, Date, FirstName, LastName
-FROM reservation, customer
-WHERE LastName LIKE 'Stephenson'
-OR LastName LIKE 'Stevenson'
-OR LastName LIKE 'Stevensen';
-GO
+SELECT reservation.CustomerID, reservation.Reservation, reservation.Date, customer.LastName
+FROM reservation
+INNER JOIN customer ON reservation.CustomerID=customer.CustomerID
+WHERE customer.LastName LIKE 'Stephenson'
+OR customer.LastName LIKE 'Stevenson'
+OR customer.LastName LIKE 'Stevensen'
+```
